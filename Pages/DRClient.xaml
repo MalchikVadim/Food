@@ -1,0 +1,43 @@
+﻿<Page x:Class="Food.Pages.DRClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Food.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DRClient">
+
+    <Grid Background="CadetBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Добавление нового клинта" FontSize="40" Name="TitletxtSales"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Width="650" Margin="15">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                <TextBlock Text="Имя" Style="{StaticResource StyleTxt}" Width="100"/>
+                <TextBox Name="TxtFossil"  Text="{Binding surname}" Width="200" Style="{StaticResource StyleTxb}"/>
+            </StackPanel>
+            <Separator Opacity="0" Height="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Фамилия" Style="{StaticResource StyleTxt}" Width="100"/>
+                <TextBox Name="TxtCostPerUnit"  Text="{Binding first_name}" Width="200" Style="{StaticResource StyleTxb}"/>
+            </StackPanel>
+            <Separator Opacity="0" Height="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Отчество" Style="{StaticResource StyleTxt}" Width="100"/>
+                <TextBox Name="TxtPricePerUnit"  Text="{Binding patronymic}" Width="200" Style="{StaticResource StyleTxb}"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Grid.Row="2" >
+                <Button Style="{StaticResource StyleBtnAlternative}" Content="Добавить" Name="BtnAddSale" Click="BtnAddSale_Click" />
+                <Button Style="{StaticResource StyleBtnAlternative}" Content="Отмена" Name="BtnCancelSale" Click="BtnCancelSale_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

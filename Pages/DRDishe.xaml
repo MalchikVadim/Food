@@ -1,0 +1,58 @@
+﻿<Page x:Class="Food.Pages.DRDishe"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Food.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DRDishe">
+
+    <Grid Background="CadetBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Добавление нового блюда" FontSize="40" Name="TitletxtSales"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="650" Margin="0,-100,0,0">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left">
+                <TextBlock Text="Название" Style="{StaticResource StyleTxt}" Width="100"/>
+                <TextBox Name="TxtFossil"  Text="{Binding title}" Width="200" Style="{StaticResource StyleTxb}"/>
+            </StackPanel>
+            <Separator Opacity="0" Height="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Вид блюда" Style="{StaticResource StyleTxt}" Width="102"/>
+                <TextBox Name="TxtCostPerUnit"  Text="{Binding view_dish}" Width="200" Style="{StaticResource StyleTxb}"/>
+            </StackPanel>
+            <Separator Opacity="0" Height="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Цена" Style="{StaticResource StyleTxt}" Width="100"/>
+                <TextBox Name="TxtPricePerUnit"  Text="{Binding price}" Width="200" Style="{StaticResource StyleTxb}"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Width="650" Margin="15" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Фото" Style="{StaticResource StyleTxt}" Width="220" TextAlignment="Center"/>
+                <Border Width="220" Height="220" CornerRadius="15" Background="White">
+                    <Image Name="ImagePerUnit"  Source="{Binding image}" />
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center">
+                <Button Style="{StaticResource StyleBtnAlternative}" Content="Добавить"  Margin="10"/>
+                
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button Style="{StaticResource StyleBtnAlternative}" Content="Добавить" Name="BtnAddSale" Click="BtnAddSale_Click" Margin="10"/>
+            <Button Style="{StaticResource StyleBtnAlternative}" Content="Отмена" Name="BtnCancelSale" Click="BtnCancelSale_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
